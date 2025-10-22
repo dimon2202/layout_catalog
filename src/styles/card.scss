@@ -1,13 +1,13 @@
 .card {
   box-sizing: border-box;
-  width: 200px;
+  width: $card-width;
   padding: 32px 16px 16px;
   border: 1px solid $border-color;
   border-radius: 5px;
-  transition: all 3s;
+  transition: transform $hover-time;
 
   &:hover {
-    transform: scale(1.2)
+    transform: scale(1.2);
   }
 
   &__image {
@@ -26,6 +26,7 @@
     padding-bottom: 4px;
     padding-top: 40px;
     color: $main-text-color;
+    transition: color $hover-time;
   }
 
   &__code {
@@ -88,6 +89,9 @@
     color: rgba(255, 255, 255, 1);
     text-align: center;
     cursor: pointer;
+    transition:
+      background $hover-time,
+      color $hover-time;
 
     &:hover {
       color: $blue;
@@ -96,6 +100,6 @@
   }
 
   &:hover .card__title {
-    color: #34568b;
+    color: $title-hover-col;
   }
 }
